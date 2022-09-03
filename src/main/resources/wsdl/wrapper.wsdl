@@ -1,0 +1,1876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://esbSi.object.mrb.mob.bom/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns2="http://schema.mrb.mob.bom/xsd" xmlns:ns1="http://services.mrb.mob.bom" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://services.mrb.mob.bom">
+    <wsdl:documentation>EsbMrbGatewayService</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax22="http://esbSi.object.mrb.mob.bom/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://esbSi.object.mrb.mob.bom/xsd">
+            <xs:complexType name="MrbEsbAcctDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbOperInfoDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="channel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="deptID" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lanID" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="operID" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbAcctCommonInfoResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billDay" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billFormat" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billFormatKey" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billMedium" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="currOS" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="currPymtDueDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dunningGroup" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="futureBillDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nextBillDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prevBal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prevPymtDueDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                    <xs:element minOccurs="0" name="smsNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="totalOS" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unbillCreditAdj" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unbillDebitAdj" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unbillPymt" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="errMsg" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="resultRefCode" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbAcctCreditStatusDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="actionDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="hasPendingReq" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbAcctInfoResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="acctStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billFreq" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billLang" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtMethod" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                    <xs:element minOccurs="0" name="splitAcctCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unbillOnetime" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbOSPenaltyResDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="osPenaltyAmt" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbSingleCreditInfoResDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="acctStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billDay" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bucketAmt0" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bucketAmt1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bucketAmt2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bucketAmt3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dunningGroup" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                    <xs:element minOccurs="0" name="totalOS" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unbillCreditAdj" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unbillDebitAdj" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbQryAcctDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbAcctTotalOSBalDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billCutoffDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="currOSBal" type="xs:double"/>
+                    <xs:element minOccurs="0" name="pymtDueDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                    <xs:element minOccurs="0" name="totalOSBal" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbBillHistoryResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="divertLoc" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="divertRmnCycle" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listBillHistory" nillable="true" type="ax22:MrbEsbBillHistoryDTO"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbBillHistoryDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billAmt" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billCycle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billSendOutSts" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billSts" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="releaseDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sendOutDate" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbBillingAddressDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addrDesc1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addrDesc2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addrDesc3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addrDesc4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addrDesc5" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addrDesc6" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbAcctBomNxtBDateDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bomNextBillDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bomStartBillDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbItemizedBillChargeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billOfferingID" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="charge" type="xs:double"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbCurrOSInfoResDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billDay" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditStsCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="currOS" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                    <xs:element minOccurs="0" name="totalOS" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbDunningHistoryResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listDunningHistory" nillable="true" type="ax22:MrbEsbDunningHistoryDTO"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbDunningHistoryDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="actionDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="actionName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="collectorAssignPeriod" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="collectorName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="holdDunDay" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="holdDunReason" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="operID" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="releaseDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="shopCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="submitSts" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbBillDateResultDTO">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listBillDate" nillable="true" type="ax22:MrbEsbBillDateDTO"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbBillDateDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billSendStatus" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbPaymentHistoryResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listPaymentHistory" nillable="true" type="ax22:MrbEsbPaymentHistoryDTO"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbPaymentHistoryDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="pymtAmt" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtChannel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtDate" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbPaymentRejHistoryResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="autopayRejCnt" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ccRejCnt" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listPaymentRejHistory" nillable="true" type="ax22:MrbEsbPaymentRejHistoryDTO"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbPaymentRejHistoryDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ccToken" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtAmt" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtChannel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtRejDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtRejReason" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pymtSts" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbPaymentRejectStsResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paymentRejSts" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbCSAutoBillReprintReqDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billCycle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbQryUbFreeEntDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="iccid" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbUbFreeEntResDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="iccid" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastUpdDate" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listEsbUbFreeEnt" nillable="true" type="ax22:MrbEsbUbFreeEntDTO"/>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                    <xs:element minOccurs="0" name="subId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbUbFreeEntDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="callType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="serviceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unit" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="usedUsage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbQueryUnbilledDailyRoamWifiDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="iccid" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbUnbilledDailyRoamWifiDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="callType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="freeEntitle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="inScopeUsedUsage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastUpdDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="serviceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unit" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="usedUsage" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbQryUbNEDayPassUsageDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="iccid" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="neServiceID" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="offerGroup" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbUbNEDayPassUsageResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="iccid" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastUpdDate" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listUbNEDayPassUsage" nillable="true" type="ax22:MrbEsbUbNEDayPassUsageDTO"/>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                    <xs:element minOccurs="0" name="subId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbUbNEDayPassUsageDTO">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listUbNEDayPass" nillable="true" type="ax22:MrbEsbUbNEDayPassDTO"/>
+                    <xs:element minOccurs="0" name="neDayPassChiDescr" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="neDayPassEngDescr" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbUbNEDayPassDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="chargeAmount" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="usageDate" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbValidationHoldDunDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="canDoHoldDunning" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbAcctCreditStsResultDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax22:MrbEsbResultDTO"/>
+                    <xs:element minOccurs="0" name="statusCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="totalOS" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MrbEsbSubDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ns="http://services.mrb.mob.bom" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.mrb.mob.bom">
+            <xs:element name="getAcctCommonInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="acctCommonInfoRequest" nillable="true" type="ns2:AcctCommonInfoRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctCommonInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:AcctCommonInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctCreditStatus">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="req" nillable="true" type="ns2:AcctCreditStatusRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctCreditStatusResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:AcctCreditStatusResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="acctInfoRequest" nillable="true" type="ns2:AcctInfoRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:AcctInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctOSPenalty">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="acctOSPenaltyRequest" nillable="true" type="ns2:AcctOSPenaltyRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctOSPenaltyResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:AcctOSPenaltyResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctSingleCreditInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="acctSingleCreditInfoRequest" nillable="true" type="ns2:AcctSingleCreditInfoRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctSingleCreditInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:AcctSingleCreditInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctTotalOSBal">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="acctTotalOSBalRequest" nillable="true" type="ns2:AcctTotalOSBalRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctTotalOSBalResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:AcctTotalOSBalResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBillHistory">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="billHistoryRequest" nillable="true" type="ns2:BillHistoryRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBillHistoryResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:BillHistoryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBillingAddress">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="req" nillable="true" type="ns2:BillingAddressRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBillingAddressResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:BillingAddressResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBomNextBillDate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="bomNextBillDateRequest" nillable="true" type="ns2:BomNextBillDateRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBomNextBillDateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:BomNextBillDateResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="chargeItemizedBill">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="req" nillable="true" type="ns2:ChargeItemizedBillRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="chargeItemizedBillResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:ChargeItemizedBillResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrOSInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="currOSInfoRequest" nillable="true" type="ns2:CurrOSInfoRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrOSInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:CurrOSInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getDunningHistory">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="dunningHistoryRequest" nillable="true" type="ns2:DunningHistoryRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getDunningHistoryResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:DunningHistoryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListBillDate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="req" nillable="true" type="ns2:ListBillDateRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListBillDateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:ListBillDateResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPaymentHistory">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="paymentHistoryRequest" nillable="true" type="ns2:PaymentHistoryRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPaymentHistoryResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:PaymentHistoryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPaymentRejHistory">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="paymentRejHistoryRequest" nillable="true" type="ns2:PaymentRejHistoryRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPaymentRejHistoryResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:PaymentRejHistoryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="chkPaymentRejectSts">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="paymentRejectStsRequest" nillable="true" type="ns2:PaymentRejectStsRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="chkPaymentRejectStsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:PaymentRejectStsResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="submitAcctHoldDunningReq">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="req" nillable="true" type="ns2:SubmitAcctHoldDunRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="submitAcctHoldDunningReqResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:SubmitAcctHoldDunResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="submitCSAutoBillReprintRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="req" nillable="true" type="ns2:SubmitBillReprintRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="submitCSAutoBillReprintRequestResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:SubmitBillReprintResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getUnbillFreeEntitleInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="req" nillable="true" type="ns2:UnbillFreeEntitleRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getUnbillFreeEntitleInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:UnbillFreeEntitleResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getUnbilledDailyRoamWifi">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="unbilledDailyRoamWifiRequest" nillable="true" type="ns2:UnbilledDailyRoamWifiRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getUnbilledDailyRoamWifiResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:UnbilledDailyRoamWifiResult"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getUnbilledNEDayPassUsage">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="req" nillable="true" type="ns2:UnbilledNEDayPassUsageRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getUnbilledNEDayPassUsageResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:UnbilledNEDayPassUsageResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="validateAcctForHoldDunning">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="req" nillable="true" type="ns2:ValidateAcctForHoldDunRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="validateAcctForHoldDunningResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:ValidateAcctForHoldDunResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAccountCreditSts">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="getAccountCreditStsReq" nillable="true" type="ns2:getAccountCreditStsRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAccountCreditStsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:getAccountCreditStsResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctCreditSts">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="getAcctCreditStsReq" nillable="true" type="ns2:getAcctCreditStsRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAcctCreditStsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns2:getAcctCreditStsResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns:ax21="http://schema.mrb.mob.bom/xsd" xmlns:ax23="http://esbSi.object.mrb.mob.bom/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schema.mrb.mob.bom/xsd">
+            <xs:import namespace="http://esbSi.object.mrb.mob.bom/xsd"/>
+            <xs:complexType name="AcctCommonInfoRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctCommonInfoResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctCommonInfoResultDTO" nillable="true" type="ax23:MrbEsbAcctCommonInfoResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctCreditStatusRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctCreditStatusResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctCreditStatusDTO" nillable="true" type="ax23:MrbEsbAcctCreditStatusDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctInfoRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctInfoResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctInfoResultDTO" nillable="true" type="ax23:MrbEsbAcctInfoResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctOSPenaltyRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctOSPenaltyResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="osPenaltyResDTO" nillable="true" type="ax23:MrbEsbOSPenaltyResDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctSingleCreditInfoRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctSingleCreditInfoResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="singleCreditInfoResDTO" nillable="true" type="ax23:MrbEsbSingleCreditInfoResDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctTotalOSBalRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbQryAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AcctTotalOSBalResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctTotalOSBalDTO" nillable="true" type="ax23:MrbEsbAcctTotalOSBalDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BillHistoryRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BillHistoryResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billHistoryResultDTO" nillable="true" type="ax23:MrbEsbBillHistoryResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BillingAddressRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BillingAddressResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billingAddressDTO" nillable="true" type="ax23:MrbEsbBillingAddressDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BomNextBillDateRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbQryAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BomNextBillDateResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctBomNxtBDateDTO" nillable="true" type="ax23:MrbEsbAcctBomNxtBDateDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ChargeItemizedBillRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="iitemizedBillChargeDTO" nillable="true" type="ax23:MrbEsbItemizedBillChargeDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ChargeItemizedBillResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="resultDTO" nillable="true" type="ax23:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CurrOSInfoRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CurrOSInfoResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="currOSInfoResDTO" nillable="true" type="ax23:MrbEsbCurrOSInfoResDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DunningHistoryRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DunningHistoryResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dunningHistoryResultDTO" nillable="true" type="ax23:MrbEsbDunningHistoryResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ListBillDateRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ListBillDateResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billDateResultDTO" nillable="true" type="ax23:MrbEsbBillDateResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PaymentHistoryRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PaymentHistoryResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="paymentHistoryResultDTO" nillable="true" type="ax23:MrbEsbPaymentHistoryResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PaymentRejHistoryRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PaymentRejHistoryResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="paymentRejHistoryResultDTO" nillable="true" type="ax23:MrbEsbPaymentRejHistoryResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PaymentRejectStsRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PaymentRejectStsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="paymentRejectStsResultDTO" nillable="true" type="ax23:MrbEsbPaymentRejectStsResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubmitAcctHoldDunRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubmitAcctHoldDunResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="resultDTO" nillable="true" type="ax23:MrbEsbResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubmitBillReprintRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="csAutoBillReprintReqDTO" nillable="true" type="ax23:MrbEsbCSAutoBillReprintReqDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubmitBillReprintResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billingAddressDTO" nillable="true" type="ax23:MrbEsbBillingAddressDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UnbillFreeEntitleRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                    <xs:element minOccurs="0" name="qryUbFreeEntDTO" nillable="true" type="ax23:MrbEsbQryUbFreeEntDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UnbillFreeEntitleResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ubFreeEntResDTO" nillable="true" type="ax23:MrbEsbUbFreeEntResDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UnbilledDailyRoamWifiRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                    <xs:element minOccurs="0" name="queryUnbilledDailyRoamWifiDTO" nillable="true" type="ax23:MrbEsbQueryUnbilledDailyRoamWifiDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UnbilledDailyRoamWifiResult">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="iccid" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listUnbilledDailyRoamWifi" nillable="true" type="ax23:MrbEsbUnbilledDailyRoamWifiDTO"/>
+                    <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="ax23:MrbEsbResultDTO"/>
+                    <xs:element minOccurs="0" name="subId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UnbilledNEDayPassUsageRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                    <xs:element minOccurs="0" name="qryUbNEDayPassUsageDTO" nillable="true" type="ax23:MrbEsbQryUbNEDayPassUsageDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UnbilledNEDayPassUsageResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ubNEDayPassUsageResultDTO" nillable="true" type="ax23:MrbEsbUbNEDayPassUsageResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ValidateAcctForHoldDunRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ValidateAcctForHoldDunResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="validationHoldDunDTO" nillable="true" type="ax23:MrbEsbValidationHoldDunDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getAccountCreditStsRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctDTO" nillable="true" type="ax23:MrbEsbAcctDTO"/>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getAccountCreditStsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctCreditStsResultDTO" nillable="true" type="ax23:MrbEsbAcctCreditStsResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getAcctCreditStsRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="operInfo" nillable="true" type="ax23:MrbEsbOperInfoDTO"/>
+                    <xs:element minOccurs="0" name="subDTO" nillable="true" type="ax23:MrbEsbSubDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getAcctCreditStsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="acctCreditStsResultDTO" nillable="true" type="ax23:MrbEsbAcctCreditStsResultDTO"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getListBillDateRequest">
+        <wsdl:part name="parameters" element="ns1:getListBillDate"/>
+    </wsdl:message>
+    <wsdl:message name="getListBillDateResponse">
+        <wsdl:part name="parameters" element="ns1:getListBillDateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctOSPenaltyRequest">
+        <wsdl:part name="parameters" element="ns1:getAcctOSPenalty"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctOSPenaltyResponse">
+        <wsdl:part name="parameters" element="ns1:getAcctOSPenaltyResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctCommonInfoRequest">
+        <wsdl:part name="parameters" element="ns1:getAcctCommonInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctCommonInfoResponse">
+        <wsdl:part name="parameters" element="ns1:getAcctCommonInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrOSInfoRequest">
+        <wsdl:part name="parameters" element="ns1:getCurrOSInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrOSInfoResponse">
+        <wsdl:part name="parameters" element="ns1:getCurrOSInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="submitAcctHoldDunningReqRequest">
+        <wsdl:part name="parameters" element="ns1:submitAcctHoldDunningReq"/>
+    </wsdl:message>
+    <wsdl:message name="submitAcctHoldDunningReqResponse">
+        <wsdl:part name="parameters" element="ns1:submitAcctHoldDunningReqResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getUnbilledNEDayPassUsageRequest">
+        <wsdl:part name="parameters" element="ns1:getUnbilledNEDayPassUsage"/>
+    </wsdl:message>
+    <wsdl:message name="getUnbilledNEDayPassUsageResponse">
+        <wsdl:part name="parameters" element="ns1:getUnbilledNEDayPassUsageResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctCreditStsRequest">
+        <wsdl:part name="parameters" element="ns1:getAcctCreditSts"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctCreditStsResponse">
+        <wsdl:part name="parameters" element="ns1:getAcctCreditStsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBomNextBillDateRequest">
+        <wsdl:part name="parameters" element="ns1:getBomNextBillDate"/>
+    </wsdl:message>
+    <wsdl:message name="getBomNextBillDateResponse">
+        <wsdl:part name="parameters" element="ns1:getBomNextBillDateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="chkPaymentRejectStsRequest">
+        <wsdl:part name="parameters" element="ns1:chkPaymentRejectSts"/>
+    </wsdl:message>
+    <wsdl:message name="chkPaymentRejectStsResponse">
+        <wsdl:part name="parameters" element="ns1:chkPaymentRejectStsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="submitCSAutoBillReprintRequestRequest">
+        <wsdl:part name="parameters" element="ns1:submitCSAutoBillReprintRequest"/>
+    </wsdl:message>
+    <wsdl:message name="submitCSAutoBillReprintRequestResponse">
+        <wsdl:part name="parameters" element="ns1:submitCSAutoBillReprintRequestResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAccountCreditStsRequest">
+        <wsdl:part name="parameters" element="ns1:getAccountCreditSts"/>
+    </wsdl:message>
+    <wsdl:message name="getAccountCreditStsResponse">
+        <wsdl:part name="parameters" element="ns1:getAccountCreditStsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBillHistoryRequest">
+        <wsdl:part name="parameters" element="ns1:getBillHistory"/>
+    </wsdl:message>
+    <wsdl:message name="getBillHistoryResponse">
+        <wsdl:part name="parameters" element="ns1:getBillHistoryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctSingleCreditInfoRequest">
+        <wsdl:part name="parameters" element="ns1:getAcctSingleCreditInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctSingleCreditInfoResponse">
+        <wsdl:part name="parameters" element="ns1:getAcctSingleCreditInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctCreditStatusRequest">
+        <wsdl:part name="parameters" element="ns1:getAcctCreditStatus"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctCreditStatusResponse">
+        <wsdl:part name="parameters" element="ns1:getAcctCreditStatusResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getUnbilledDailyRoamWifiRequest">
+        <wsdl:part name="parameters" element="ns1:getUnbilledDailyRoamWifi"/>
+    </wsdl:message>
+    <wsdl:message name="getUnbilledDailyRoamWifiResponse">
+        <wsdl:part name="parameters" element="ns1:getUnbilledDailyRoamWifiResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBillingAddressRequest">
+        <wsdl:part name="parameters" element="ns1:getBillingAddress"/>
+    </wsdl:message>
+    <wsdl:message name="getBillingAddressResponse">
+        <wsdl:part name="parameters" element="ns1:getBillingAddressResponse"/>
+    </wsdl:message>
+    <wsdl:message name="chargeItemizedBillRequest">
+        <wsdl:part name="parameters" element="ns1:chargeItemizedBill"/>
+    </wsdl:message>
+    <wsdl:message name="chargeItemizedBillResponse">
+        <wsdl:part name="parameters" element="ns1:chargeItemizedBillResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getDunningHistoryRequest">
+        <wsdl:part name="parameters" element="ns1:getDunningHistory"/>
+    </wsdl:message>
+    <wsdl:message name="getDunningHistoryResponse">
+        <wsdl:part name="parameters" element="ns1:getDunningHistoryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getUnbillFreeEntitleInfoRequest">
+        <wsdl:part name="parameters" element="ns1:getUnbillFreeEntitleInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getUnbillFreeEntitleInfoResponse">
+        <wsdl:part name="parameters" element="ns1:getUnbillFreeEntitleInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctTotalOSBalRequest">
+        <wsdl:part name="parameters" element="ns1:getAcctTotalOSBal"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctTotalOSBalResponse">
+        <wsdl:part name="parameters" element="ns1:getAcctTotalOSBalResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPaymentHistoryRequest">
+        <wsdl:part name="parameters" element="ns1:getPaymentHistory"/>
+    </wsdl:message>
+    <wsdl:message name="getPaymentHistoryResponse">
+        <wsdl:part name="parameters" element="ns1:getPaymentHistoryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="validateAcctForHoldDunningRequest">
+        <wsdl:part name="parameters" element="ns1:validateAcctForHoldDunning"/>
+    </wsdl:message>
+    <wsdl:message name="validateAcctForHoldDunningResponse">
+        <wsdl:part name="parameters" element="ns1:validateAcctForHoldDunningResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPaymentRejHistoryRequest">
+        <wsdl:part name="parameters" element="ns1:getPaymentRejHistory"/>
+    </wsdl:message>
+    <wsdl:message name="getPaymentRejHistoryResponse">
+        <wsdl:part name="parameters" element="ns1:getPaymentRejHistoryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctInfoRequest">
+        <wsdl:part name="parameters" element="ns1:getAcctInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getAcctInfoResponse">
+        <wsdl:part name="parameters" element="ns1:getAcctInfoResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="EsbMrbGatewayServicePortType">
+        <wsdl:operation name="getListBillDate">
+            <wsdl:input message="ns1:getListBillDateRequest" wsaw:Action="urn:getListBillDate"/>
+            <wsdl:output message="ns1:getListBillDateResponse" wsaw:Action="urn:getListBillDateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctOSPenalty">
+            <wsdl:input message="ns1:getAcctOSPenaltyRequest" wsaw:Action="urn:getAcctOSPenalty"/>
+            <wsdl:output message="ns1:getAcctOSPenaltyResponse" wsaw:Action="urn:getAcctOSPenaltyResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCommonInfo">
+            <wsdl:input message="ns1:getAcctCommonInfoRequest" wsaw:Action="urn:getAcctCommonInfo"/>
+            <wsdl:output message="ns1:getAcctCommonInfoResponse" wsaw:Action="urn:getAcctCommonInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrOSInfo">
+            <wsdl:input message="ns1:getCurrOSInfoRequest" wsaw:Action="urn:getCurrOSInfo"/>
+            <wsdl:output message="ns1:getCurrOSInfoResponse" wsaw:Action="urn:getCurrOSInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="submitAcctHoldDunningReq">
+            <wsdl:input message="ns1:submitAcctHoldDunningReqRequest" wsaw:Action="urn:submitAcctHoldDunningReq"/>
+            <wsdl:output message="ns1:submitAcctHoldDunningReqResponse" wsaw:Action="urn:submitAcctHoldDunningReqResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledNEDayPassUsage">
+            <wsdl:input message="ns1:getUnbilledNEDayPassUsageRequest" wsaw:Action="urn:getUnbilledNEDayPassUsage"/>
+            <wsdl:output message="ns1:getUnbilledNEDayPassUsageResponse" wsaw:Action="urn:getUnbilledNEDayPassUsageResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCreditSts">
+            <wsdl:input message="ns1:getAcctCreditStsRequest" wsaw:Action="urn:getAcctCreditSts"/>
+            <wsdl:output message="ns1:getAcctCreditStsResponse" wsaw:Action="urn:getAcctCreditStsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBomNextBillDate">
+            <wsdl:input message="ns1:getBomNextBillDateRequest" wsaw:Action="urn:getBomNextBillDate"/>
+            <wsdl:output message="ns1:getBomNextBillDateResponse" wsaw:Action="urn:getBomNextBillDateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="chkPaymentRejectSts">
+            <wsdl:input message="ns1:chkPaymentRejectStsRequest" wsaw:Action="urn:chkPaymentRejectSts"/>
+            <wsdl:output message="ns1:chkPaymentRejectStsResponse" wsaw:Action="urn:chkPaymentRejectStsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="submitCSAutoBillReprintRequest">
+            <wsdl:input message="ns1:submitCSAutoBillReprintRequestRequest" wsaw:Action="urn:submitCSAutoBillReprintRequest"/>
+            <wsdl:output message="ns1:submitCSAutoBillReprintRequestResponse" wsaw:Action="urn:submitCSAutoBillReprintRequestResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountCreditSts">
+            <wsdl:input message="ns1:getAccountCreditStsRequest" wsaw:Action="urn:getAccountCreditSts"/>
+            <wsdl:output message="ns1:getAccountCreditStsResponse" wsaw:Action="urn:getAccountCreditStsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBillHistory">
+            <wsdl:input message="ns1:getBillHistoryRequest" wsaw:Action="urn:getBillHistory"/>
+            <wsdl:output message="ns1:getBillHistoryResponse" wsaw:Action="urn:getBillHistoryResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctSingleCreditInfo">
+            <wsdl:input message="ns1:getAcctSingleCreditInfoRequest" wsaw:Action="urn:getAcctSingleCreditInfo"/>
+            <wsdl:output message="ns1:getAcctSingleCreditInfoResponse" wsaw:Action="urn:getAcctSingleCreditInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCreditStatus">
+            <wsdl:input message="ns1:getAcctCreditStatusRequest" wsaw:Action="urn:getAcctCreditStatus"/>
+            <wsdl:output message="ns1:getAcctCreditStatusResponse" wsaw:Action="urn:getAcctCreditStatusResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledDailyRoamWifi">
+            <wsdl:input message="ns1:getUnbilledDailyRoamWifiRequest" wsaw:Action="urn:getUnbilledDailyRoamWifi"/>
+            <wsdl:output message="ns1:getUnbilledDailyRoamWifiResponse" wsaw:Action="urn:getUnbilledDailyRoamWifiResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBillingAddress">
+            <wsdl:input message="ns1:getBillingAddressRequest" wsaw:Action="urn:getBillingAddress"/>
+            <wsdl:output message="ns1:getBillingAddressResponse" wsaw:Action="urn:getBillingAddressResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="chargeItemizedBill">
+            <wsdl:input message="ns1:chargeItemizedBillRequest" wsaw:Action="urn:chargeItemizedBill"/>
+            <wsdl:output message="ns1:chargeItemizedBillResponse" wsaw:Action="urn:chargeItemizedBillResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDunningHistory">
+            <wsdl:input message="ns1:getDunningHistoryRequest" wsaw:Action="urn:getDunningHistory"/>
+            <wsdl:output message="ns1:getDunningHistoryResponse" wsaw:Action="urn:getDunningHistoryResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbillFreeEntitleInfo">
+            <wsdl:input message="ns1:getUnbillFreeEntitleInfoRequest" wsaw:Action="urn:getUnbillFreeEntitleInfo"/>
+            <wsdl:output message="ns1:getUnbillFreeEntitleInfoResponse" wsaw:Action="urn:getUnbillFreeEntitleInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctTotalOSBal">
+            <wsdl:input message="ns1:getAcctTotalOSBalRequest" wsaw:Action="urn:getAcctTotalOSBal"/>
+            <wsdl:output message="ns1:getAcctTotalOSBalResponse" wsaw:Action="urn:getAcctTotalOSBalResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPaymentHistory">
+            <wsdl:input message="ns1:getPaymentHistoryRequest" wsaw:Action="urn:getPaymentHistory"/>
+            <wsdl:output message="ns1:getPaymentHistoryResponse" wsaw:Action="urn:getPaymentHistoryResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="validateAcctForHoldDunning">
+            <wsdl:input message="ns1:validateAcctForHoldDunningRequest" wsaw:Action="urn:validateAcctForHoldDunning"/>
+            <wsdl:output message="ns1:validateAcctForHoldDunningResponse" wsaw:Action="urn:validateAcctForHoldDunningResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPaymentRejHistory">
+            <wsdl:input message="ns1:getPaymentRejHistoryRequest" wsaw:Action="urn:getPaymentRejHistory"/>
+            <wsdl:output message="ns1:getPaymentRejHistoryResponse" wsaw:Action="urn:getPaymentRejHistoryResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctInfo">
+            <wsdl:input message="ns1:getAcctInfoRequest" wsaw:Action="urn:getAcctInfo"/>
+            <wsdl:output message="ns1:getAcctInfoResponse" wsaw:Action="urn:getAcctInfoResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="EsbMrbGatewayServiceSOAP11Binding" type="ns1:EsbMrbGatewayServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getListBillDate">
+            <soap:operation soapAction="urn:getListBillDate" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctOSPenalty">
+            <soap:operation soapAction="urn:getAcctOSPenalty" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCommonInfo">
+            <soap:operation soapAction="urn:getAcctCommonInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrOSInfo">
+            <soap:operation soapAction="urn:getCurrOSInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="submitAcctHoldDunningReq">
+            <soap:operation soapAction="urn:submitAcctHoldDunningReq" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledNEDayPassUsage">
+            <soap:operation soapAction="urn:getUnbilledNEDayPassUsage" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCreditSts">
+            <soap:operation soapAction="urn:getAcctCreditSts" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBomNextBillDate">
+            <soap:operation soapAction="urn:getBomNextBillDate" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="chkPaymentRejectSts">
+            <soap:operation soapAction="urn:chkPaymentRejectSts" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="submitCSAutoBillReprintRequest">
+            <soap:operation soapAction="urn:submitCSAutoBillReprintRequest" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountCreditSts">
+            <soap:operation soapAction="urn:getAccountCreditSts" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBillHistory">
+            <soap:operation soapAction="urn:getBillHistory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctSingleCreditInfo">
+            <soap:operation soapAction="urn:getAcctSingleCreditInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCreditStatus">
+            <soap:operation soapAction="urn:getAcctCreditStatus" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledDailyRoamWifi">
+            <soap:operation soapAction="urn:getUnbilledDailyRoamWifi" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBillingAddress">
+            <soap:operation soapAction="urn:getBillingAddress" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="chargeItemizedBill">
+            <soap:operation soapAction="urn:chargeItemizedBill" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDunningHistory">
+            <soap:operation soapAction="urn:getDunningHistory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbillFreeEntitleInfo">
+            <soap:operation soapAction="urn:getUnbillFreeEntitleInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctTotalOSBal">
+            <soap:operation soapAction="urn:getAcctTotalOSBal" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPaymentHistory">
+            <soap:operation soapAction="urn:getPaymentHistory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="validateAcctForHoldDunning">
+            <soap:operation soapAction="urn:validateAcctForHoldDunning" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPaymentRejHistory">
+            <soap:operation soapAction="urn:getPaymentRejHistory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctInfo">
+            <soap:operation soapAction="urn:getAcctInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="EsbMrbGatewayServiceSOAP12Binding" type="ns1:EsbMrbGatewayServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getListBillDate">
+            <soap12:operation soapAction="urn:getListBillDate" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctOSPenalty">
+            <soap12:operation soapAction="urn:getAcctOSPenalty" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCommonInfo">
+            <soap12:operation soapAction="urn:getAcctCommonInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrOSInfo">
+            <soap12:operation soapAction="urn:getCurrOSInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="submitAcctHoldDunningReq">
+            <soap12:operation soapAction="urn:submitAcctHoldDunningReq" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledNEDayPassUsage">
+            <soap12:operation soapAction="urn:getUnbilledNEDayPassUsage" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCreditSts">
+            <soap12:operation soapAction="urn:getAcctCreditSts" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBomNextBillDate">
+            <soap12:operation soapAction="urn:getBomNextBillDate" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="chkPaymentRejectSts">
+            <soap12:operation soapAction="urn:chkPaymentRejectSts" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="submitCSAutoBillReprintRequest">
+            <soap12:operation soapAction="urn:submitCSAutoBillReprintRequest" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountCreditSts">
+            <soap12:operation soapAction="urn:getAccountCreditSts" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBillHistory">
+            <soap12:operation soapAction="urn:getBillHistory" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctSingleCreditInfo">
+            <soap12:operation soapAction="urn:getAcctSingleCreditInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCreditStatus">
+            <soap12:operation soapAction="urn:getAcctCreditStatus" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledDailyRoamWifi">
+            <soap12:operation soapAction="urn:getUnbilledDailyRoamWifi" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBillingAddress">
+            <soap12:operation soapAction="urn:getBillingAddress" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="chargeItemizedBill">
+            <soap12:operation soapAction="urn:chargeItemizedBill" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDunningHistory">
+            <soap12:operation soapAction="urn:getDunningHistory" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbillFreeEntitleInfo">
+            <soap12:operation soapAction="urn:getUnbillFreeEntitleInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctTotalOSBal">
+            <soap12:operation soapAction="urn:getAcctTotalOSBal" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPaymentHistory">
+            <soap12:operation soapAction="urn:getPaymentHistory" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="validateAcctForHoldDunning">
+            <soap12:operation soapAction="urn:validateAcctForHoldDunning" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPaymentRejHistory">
+            <soap12:operation soapAction="urn:getPaymentRejHistory" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctInfo">
+            <soap12:operation soapAction="urn:getAcctInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="EsbMrbGatewayServiceHttpBinding" type="ns1:EsbMrbGatewayServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getListBillDate">
+            <http:operation location="EsbMrbGatewayService/getListBillDate"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getListBillDate"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getListBillDate"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctOSPenalty">
+            <http:operation location="EsbMrbGatewayService/getAcctOSPenalty"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getAcctOSPenalty"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getAcctOSPenalty"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCommonInfo">
+            <http:operation location="EsbMrbGatewayService/getAcctCommonInfo"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getAcctCommonInfo"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getAcctCommonInfo"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrOSInfo">
+            <http:operation location="EsbMrbGatewayService/getCurrOSInfo"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getCurrOSInfo"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getCurrOSInfo"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="submitAcctHoldDunningReq">
+            <http:operation location="EsbMrbGatewayService/submitAcctHoldDunningReq"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="submitAcctHoldDunningReq"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="submitAcctHoldDunningReq"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledNEDayPassUsage">
+            <http:operation location="EsbMrbGatewayService/getUnbilledNEDayPassUsage"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getUnbilledNEDayPassUsage"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getUnbilledNEDayPassUsage"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCreditSts">
+            <http:operation location="EsbMrbGatewayService/getAcctCreditSts"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getAcctCreditSts"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getAcctCreditSts"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBomNextBillDate">
+            <http:operation location="EsbMrbGatewayService/getBomNextBillDate"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getBomNextBillDate"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getBomNextBillDate"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="chkPaymentRejectSts">
+            <http:operation location="EsbMrbGatewayService/chkPaymentRejectSts"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="chkPaymentRejectSts"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="chkPaymentRejectSts"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="submitCSAutoBillReprintRequest">
+            <http:operation location="EsbMrbGatewayService/submitCSAutoBillReprintRequest"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="submitCSAutoBillReprintRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="submitCSAutoBillReprintRequest"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountCreditSts">
+            <http:operation location="EsbMrbGatewayService/getAccountCreditSts"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getAccountCreditSts"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getAccountCreditSts"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBillHistory">
+            <http:operation location="EsbMrbGatewayService/getBillHistory"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getBillHistory"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getBillHistory"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctSingleCreditInfo">
+            <http:operation location="EsbMrbGatewayService/getAcctSingleCreditInfo"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getAcctSingleCreditInfo"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getAcctSingleCreditInfo"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctCreditStatus">
+            <http:operation location="EsbMrbGatewayService/getAcctCreditStatus"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getAcctCreditStatus"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getAcctCreditStatus"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledDailyRoamWifi">
+            <http:operation location="EsbMrbGatewayService/getUnbilledDailyRoamWifi"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getUnbilledDailyRoamWifi"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getUnbilledDailyRoamWifi"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBillingAddress">
+            <http:operation location="EsbMrbGatewayService/getBillingAddress"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getBillingAddress"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getBillingAddress"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="chargeItemizedBill">
+            <http:operation location="EsbMrbGatewayService/chargeItemizedBill"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="chargeItemizedBill"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="chargeItemizedBill"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDunningHistory">
+            <http:operation location="EsbMrbGatewayService/getDunningHistory"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getDunningHistory"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getDunningHistory"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbillFreeEntitleInfo">
+            <http:operation location="EsbMrbGatewayService/getUnbillFreeEntitleInfo"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getUnbillFreeEntitleInfo"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getUnbillFreeEntitleInfo"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctTotalOSBal">
+            <http:operation location="EsbMrbGatewayService/getAcctTotalOSBal"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getAcctTotalOSBal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getAcctTotalOSBal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPaymentHistory">
+            <http:operation location="EsbMrbGatewayService/getPaymentHistory"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getPaymentHistory"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getPaymentHistory"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="validateAcctForHoldDunning">
+            <http:operation location="EsbMrbGatewayService/validateAcctForHoldDunning"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="validateAcctForHoldDunning"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="validateAcctForHoldDunning"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPaymentRejHistory">
+            <http:operation location="EsbMrbGatewayService/getPaymentRejHistory"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getPaymentRejHistory"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getPaymentRejHistory"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAcctInfo">
+            <http:operation location="EsbMrbGatewayService/getAcctInfo"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getAcctInfo"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getAcctInfo"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="EsbMrbGatewayService">
+        <wsdl:port name="EsbMrbGatewayServiceSOAP11port_http" binding="ns1:EsbMrbGatewayServiceSOAP11Binding">
+            <soap:address location="http://10.166.4.65:8021/ESB_MRB_AXIS2/services/EsbMrbGatewayService"/>
+        </wsdl:port>
+        <wsdl:port name="EsbMrbGatewayServiceSOAP12port_http" binding="ns1:EsbMrbGatewayServiceSOAP12Binding">
+            <soap12:address location="http://10.166.4.65:8021/ESB_MRB_AXIS2/services/EsbMrbGatewayService"/>
+        </wsdl:port>
+        <wsdl:port name="EsbMrbGatewayServiceHttpport" binding="ns1:EsbMrbGatewayServiceHttpBinding">
+            <http:address location="http://10.166.4.65:8021/ESB_MRB_AXIS2/services/EsbMrbGatewayService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
